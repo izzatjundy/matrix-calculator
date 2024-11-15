@@ -223,7 +223,7 @@ public class SPL{
 
         m = m.gaussElimination();
 
-        //Output.printMatrix(m.copy());
+        Output.printMatrix(m.copy());
 
         if(m.isManySolution()){
             anu = solveManySolution(m.copy());
@@ -232,11 +232,12 @@ public class SPL{
 
         // solusi unik
         m = m.gaussJordanElimination();
+        Output.printMatrix(m.copy());
 
         int i = 0;
         while(i<m.row){
 
-            anu[i] = String.format("%.4f", m.matrix[i][m.col - 1]);
+            anu[i] = String.format("%f", m.matrix[i][m.col - 1]);
 
             i+=1;
         }

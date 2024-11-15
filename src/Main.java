@@ -11,7 +11,7 @@ public class Main{
         int cmd1, cmd2, cmd3;
         double[][] daftarTitik = new double[0][0];
         boolean salahInput, adaSolusi, banyakSolusi;
-        String pesanTidakAdaSolusi, ok;
+        String pesanTidakAdaSolusi;
         Matrix m = new Matrix();
         String[] untukOutput;
 
@@ -272,9 +272,13 @@ public class Main{
                                 Output.OutputFile(m, 1);
                             }
 
+                            Output.lanjut();
+
                         }else{
 
                             System.out.println("Matriks tersebut tidak memiliki balikan.\n");
+
+                            Output.lanjut();
 
                         }
 
@@ -428,7 +432,8 @@ public class Main{
                             daftarTitik = Input.input_regresi_kuadratik();
                             untukOutput = RegresiKuadratik.regresi_kuadrat_berganda(daftarTitik);
 
-                            //System.out.println(untukOutput[0]);
+                            System.out.println(untukOutput[0]);
+                            System.out.println(untukOutput[untukOutput.length-1]);
                         }else if(cmd3 == 2){
                             RegresiKuadratik.RegresiKuadratikFile();
                         }

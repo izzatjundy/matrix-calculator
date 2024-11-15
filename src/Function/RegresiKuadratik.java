@@ -124,6 +124,8 @@ public class RegresiKuadratik {
             }
         
             m.matrix[0][0] = row-1;
+
+            Output.printMatrix(m);
         
             i = 1;
             while(i<row){
@@ -142,6 +144,16 @@ public class RegresiKuadratik {
             asoy = Matrix.sumMatrix(asoy.copy(), m);
 
             p+=1;
+        }
+
+        asoy.matrix[0][0] = n-1;
+
+        i = 0;
+        while(i<row){
+        
+            asoy.matrix[i][0] = 1;
+        
+            i+=1;
         }
 
         Output.printMatrix(asoy.copy());

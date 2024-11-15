@@ -1,9 +1,23 @@
 package ADTMatrix;
 
+import Function.Invers;
+import Function.SPL;
+import IO.Output;
+
 public class TestMatrix {
     public static void main(String[] args) {
-        testGaussElimination();
-        testGaussJordanElimination();
+        double[][] data1 = {
+            {1, 2, 3, 0},
+            {-4, 5, 6, 0},
+            {7, -8, 9, 0}
+        };
+
+        Matrix m1 = new Matrix();
+        m1.toMatrix(data1, 3, 4);
+
+        String[] anu = SPL.metode_gauss(m1.copy());
+
+        Output.solusi_spl(anu);
     }
 
     public static void testGaussElimination() {

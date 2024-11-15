@@ -72,17 +72,39 @@ public class Interpolasi{
         }
             */
 
+        // i = 0;
+        // while(i<m.row){
+
+        //     m.matrix[i][m.col-1] += (0.000001 * i);
+
+        //     i+=1;
+        // }
+
         return SPL.solve(m);
     }
 
     public static double findY(String[] function, double x){
-        double y = 0;
-        int i = 0;
-        while(i<function.length){
+        double y = 0, a;
+        int i = function.length-1, p;
+        //System.out.println(i + "-------------");
+        while(i>=0){
 
-            y+=Double.parseDouble(function[i]) * Math.pow(x, i);
+            //System.out.println(y);
+            a = Double.parseDouble(function[i]);
+            //System.out.println(a);
+            if(i!=0){
 
-            i+=1;
+                p = 0;
+                while(p<i){
+                    a = a*x;
+                    p+=1;
+                }
+
+            }
+
+            y+=a;
+
+            i-=1;
         }
         return y;
     }
