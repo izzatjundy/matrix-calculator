@@ -168,12 +168,6 @@ public class Bicubic{
         fx(m);
         fy(m);
         fxy(m);
-        for (int i =0; i<16; i++){
-            for (int j = 0; j<16; j++){
-                System.out.printf("%.4f ", m.matrix[i][j]);
-            }
-            System.out.println();
-        }
 
         Matrix mInvers = new Matrix();
         mInvers.createMatrix(16,16);

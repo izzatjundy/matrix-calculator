@@ -9,14 +9,20 @@ import IO.Output;
 public class Input {
     public static Scanner scanner = new Scanner(System.in);
     public static Matrix readMatrix() {
-        int i,j, row, col;
+        int i,j, row = 0, col= 0;
         double[][] m;
         Matrix hasil = new Matrix();
 
-        System.out.print("Masukkan jumlah baris: ");
-        row = scanner.nextInt();
-        System.out.print("Masukkan jumlah kolom: ");
-        col = scanner.nextInt();
+        while (row <= 0 || col <= 0){
+            System.out.print("Masukkan jumlah baris: ");
+            row = scanner.nextInt();
+            System.out.print("Masukkan jumlah kolom: ");
+            col = scanner.nextInt();
+            if (row <= 0 || col <= 0){
+                System.out.println("Baris dan kolom harus berjumlah lebih dari 0!");
+            }
+        }
+        
 
         m = new double[row][col];
         System.out.println("Masukkan elemen matriks: ");
